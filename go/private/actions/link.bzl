@@ -29,7 +29,7 @@ def emit_link(ctx, go_toolchain,
     gc_linkopts = [],
     x_defs = {}):
   """See go/toolchains.rst#link for full documentation."""
-
+  print("inside emit_link")
   if library == None: fail("library is a required parameter")
   if executable == None: fail("executable is a required parameter")
 
@@ -107,7 +107,7 @@ def emit_link(ctx, go_toolchain,
       link_args += ["-linkstamp", ctx.attr.linkstamp]
 
   link_args += ["--"] + link_opts
-
+  print("link_args = %s" % link_args)
   ctx.action(
       inputs = list(libs + cgo_deps +
                 go_toolchain.data.tools + go_toolchain.data.crosstool + stamp_inputs),
