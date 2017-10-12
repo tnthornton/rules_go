@@ -232,7 +232,7 @@ _cgo_collect_info = rule(
 info a CgoInfo provider for easy consumption."""
 
 def setup_cgo_library(name, srcs, cdeps, copts, clinkopts):
-  traceback.extract_stack()
+  print("inside setup_cgo_library")
   cgo_codegen_dir = name + ".cgo.dir"
 
   # Apply build constraints to source files (both Go and C) but not to header
