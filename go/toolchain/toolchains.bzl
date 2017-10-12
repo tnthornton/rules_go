@@ -103,7 +103,6 @@ def _generate_toolchains():
       # TODO(yugui) Remove this workaround once rules_go stops supporting XCode 7.2
       # or earlier.
       toolchain["link_flags"] += ["-s"]
-      toolchain["cgo_link_flags"] += ["-shared", "-Wl,-all_load"]
     if "linux" in toolchain["host"]:
       toolchain["cgo_link_flags"] += ["-Wl,-whole-archive"]
 
